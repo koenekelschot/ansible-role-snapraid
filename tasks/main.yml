@@ -35,17 +35,19 @@
       when: snapraid_current_version.stdout is version(snapraid_version, '>')
 
     - name: Install new version of SnapRAID
-      include: install_snapraid.yml
+      include_tasks: install_snapraid.yml
       when: snapraid_current_version.stdout is version(snapraid_version, '<')
   when: snapraid_current_version.stdout != ''
 
 - name: Install SnapRAID
-  include: install_snapraid.yml
+  include_tasks: install_snapraid.yml
   when: snapraid_current_version.stdout == ''
 
 - name: Configure SnapRAID arrays
-  include: configure_snapraid.yml array={{ item }}
+  include_tasks: configure_snapraid.yml
+  vars:
+    array: "{{ item }}"
   with_items: "{{ snapraid_arrays }}"
 
 - name: Configure SnapRAID cron sync job
-  include: configure_cron_sync.yml
+  include_tasks: configure_cron_sync.yml
