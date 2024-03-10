@@ -14,23 +14,7 @@ exceeded or something else goes wrong.
 
 # Installation
 
-This repository makes use of a submodule, which is just pointer to another
-repository, and it needs to be initialized and downloaded as well before this
-role will work. Fortunately it is possible to do this in just a single command,
-so move into your `roles/` folder and run the following:
-
-```bash
-git clone --recursive git@github.com:JonasAlfredsson/ansible-role-snapraid.git snapraid
-```
-
-If you would like to download any updates for this role in the future, you may
-use the following command from within the previously cloned folder:
-
-```bash
-git pull --recurse-submodules
-```
-
-When the configuration is complete you may then just include this role in your
+You just include this role in your
 main playbook like this:
 
 ```yaml
