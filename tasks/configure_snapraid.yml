@@ -20,6 +20,15 @@
     owner: "root"
     group: "root"
 
+- name: "Create SnapRAID folder for primary content file for array '{{ array.name }}'"
+  become: true
+  file:
+    path: "{{ array.primary_content_file | dirname }}"
+    state: directory
+    mode: '0755'
+    owner: "root"
+    group: "root"
+
 - name: "Push out the SnapRAID configuration file for array '{{ array.name }}'"
   become: true
   template:
