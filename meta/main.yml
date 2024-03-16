@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  author: Jonas Alfredsson
+  role_name: snapraid
+  namespace: koenekelschot
+  description: download, build and install SnapRAID. Updated fork of https://github.com/JonasAlfredsson/ansible-role-snapraid
+  license: GNU General Public License
+  company: none
+  min_ansible_version: "2.9"
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+  galaxy_tags:
+    - system
+    - server
+    - snapraid
+    - filesystem
+    - disk
+    - mount
+
+dependencies: []
