@@ -41,6 +41,7 @@
     dest: "{{ snapraid_muttrc_path }}"
     src: muttrc.j2
     mode: '0600'
+  when: snapraid_mutt is defined
 
 - name: Push out logrotate configuration for 'snapraid_sync'
   become: true
